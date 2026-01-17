@@ -1,0 +1,16 @@
+{# templates/book/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des livres</h1>
+
+    <ul>
+    {% for b in books %}
+        <li>Nom du livre : {{ b.nom }}</li>
+    {% else %}
+        <li>Aucun livre dans la liste.</li>
+    {% endfor %}
+    </ul>
+
+    <a href="{{ path('app_book_add') }}">Ajouter un livre</a>
+{% endblock %}
